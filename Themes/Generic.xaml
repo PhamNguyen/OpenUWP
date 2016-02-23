@@ -1,0 +1,49 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="using:OpenUWP.Controls">
+    <Style TargetType="local:SuperImage">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:SuperImage">
+                    <Grid>
+                        <Border x:Name="PART_PlaceholderContainer"
+                                CornerRadius="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=CornerRadius, UpdateSourceTrigger=PropertyChanged}"
+                                Width="{TemplateBinding Width}"
+                                Height="{TemplateBinding Height}"
+                                MaxHeight="{TemplateBinding MaxHeight}"
+                                MaxWidth="{TemplateBinding MaxWidth}"
+                                MinHeight="{TemplateBinding MinHeight}"
+                                MinWidth="{TemplateBinding MinWidth}"
+                                VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                HorizontalAlignment="{TemplateBinding HorizontalAlignment}">
+                            <Border.Background>
+                                <ImageBrush ImageSource="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=PlaceholderImageSource, UpdateSourceTrigger=PropertyChanged}"
+                                            Stretch="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Stretch, UpdateSourceTrigger=PropertyChanged}"
+                                            AlignmentX="Center"
+                                            AlignmentY="Center"/>
+                            </Border.Background>
+                        </Border>
+                        <Border x:Name="PART_DisplayContainer"
+                                CornerRadius="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=CornerRadius, UpdateSourceTrigger=PropertyChanged}"
+                                Width="{TemplateBinding Width}"
+                                Height="{TemplateBinding Height}"
+                                MaxHeight="{TemplateBinding MaxHeight}"
+                                MaxWidth="{TemplateBinding MaxWidth}"
+                                MinHeight="{TemplateBinding MinHeight}"
+                                MinWidth="{TemplateBinding MinWidth}"
+                                VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                HorizontalAlignment="{TemplateBinding HorizontalAlignment}">
+                            <Border.Background>
+                                <ImageBrush x:Name="PART_DisplayImage"
+                                            ImageSource="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Source, UpdateSourceTrigger=PropertyChanged}"
+                                            Stretch="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Stretch, UpdateSourceTrigger=PropertyChanged}"
+                                            AlignmentX="Center"
+                                            AlignmentY="Center"                                            />
+                            </Border.Background>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
