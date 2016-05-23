@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OpenUWP
+namespace OpenUWP.Controls.SplitViewMenu
 {
-    class Class1
+    public interface ISplitViewItem
     {
     }
 }

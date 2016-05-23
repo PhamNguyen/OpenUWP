@@ -118,9 +118,25 @@
     <Compile Include="Controls\GifView.xaml.cs">
       <DependentUpon>GifView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\HtmlToXaml\Html2XamlProcessor.cs" />
+    <Compile Include="Controls\HtmlToXaml\RichTextBlockProperties.cs" />
     <Compile Include="Controls\IconButton.xaml.cs">
       <DependentUpon>IconButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\SplitViewMenu\IActionMenuItem.cs" />
+    <Compile Include="Controls\SplitViewMenu\INavigationMenuItem.cs" />
+    <Compile Include="Controls\SplitViewMenu\ISplitViewItem.cs" />
+    <Compile Include="Controls\SplitViewMenu\ISplitViewMenuItem.cs" />
+    <Compile Include="Controls\SplitViewMenu\MenuListView.cs" />
+    <Compile Include="Controls\SplitViewMenu\NavMenuListView.cs" />
+    <Compile Include="Controls\SplitViewMenu\SimpleActionMenuItem.cs" />
+    <Compile Include="Controls\SplitViewMenu\SimpleNavMenuItem.cs" />
+    <Compile Include="Controls\SplitViewMenu\SplitViewGroup.cs" />
+    <Compile Include="Controls\SplitViewMenu\SplitViewItemContainerStyleSelector.cs" />
+    <Compile Include="Controls\SplitViewMenu\SplitViewItemTemplateSelector.cs" />
+    <Compile Include="Controls\SplitViewMenu\SplitViewMenu.cs" />
+    <Compile Include="Controls\SplitViewMenu\SplitViewSeparator.cs" />
+    <Compile Include="Controls\SuperImage.cs" />
     <Compile Include="Converter\BoolToVisibility.cs" />
     <Compile Include="Converter\EncodedHtmlToStringConverter.cs" />
     <Compile Include="Converter\StringToBoolJsonConverter.cs" />
@@ -157,6 +173,7 @@
     <Compile Include="Services\NetworkService.cs" />
     <Compile Include="Services\StorageService.cs" />
     <Compile Include="Utils\ActionHelper.cs" />
+    <Compile Include="Utils\AudioHelper.cs" />
     <Compile Include="Utils\Base32.cs" />
     <Compile Include="Utils\BaseRC4.cs" />
     <Compile Include="Utils\DateTimeHelper.cs" />
@@ -165,6 +182,7 @@
     <Compile Include="Utils\MD5Core.cs" />
     <Compile Include="Utils\ParseHelper.cs" />
     <Compile Include="Services\PlatformService.cs" />
+    <Compile Include="Utils\ToastHelper.cs" />
     <Compile Include="Utils\TypingHelper.cs" />
     <Compile Include="Utils\UIHelper.cs" />
     <Compile Include="Utils\UserAgentHelper.cs" />
@@ -183,6 +201,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\IconButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
