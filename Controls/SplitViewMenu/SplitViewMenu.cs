@@ -311,13 +311,12 @@ namespace OpenUWP.Controls.SplitViewMenu
         {
             if (e.NavigationMode != NavigationMode.Back || !MenuItems.Any())
                 return;
-            var item = MenuItems.SingleOrDefault(p => p.GetType() == typeof(INavigationMenuItem)
-            && (p as INavigationMenuItem).DestinationPage == e.SourcePageType);
+            var item = MenuItems.SingleOrDefault(p => p is INavigationMenuItem && (p as INavigationMenuItem).DestinationPage == e.SourcePageType);
             if (item == null && _pageFrame.BackStackDepth > 0)
             {
                 foreach (var entry in _pageFrame.BackStack.Reverse())
                 {
-                    item = MenuItems.SingleOrDefault(p => (p as INavigationMenuItem).DestinationPage == entry.SourcePageType);
+                    item = MenuItems.SingleOrDefault(p => (p as INavigationMenuItem)?.DestinationPage == entry.SourcePageType);
                     if (item != null)
                         break;
                 }
