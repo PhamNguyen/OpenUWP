@@ -93,7 +93,7 @@ namespace OpenUWP.Services
                 stream.Dispose();
             }
             return objectFromXml;
-        }
+        }        
 
         /// <summary>
         /// Save an object to Local Folder. 
