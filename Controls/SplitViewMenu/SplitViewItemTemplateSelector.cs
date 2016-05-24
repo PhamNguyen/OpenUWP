@@ -23,10 +23,12 @@ namespace OpenUWP.Controls.SplitViewMenu
             {
                 return SeparatorTemplate;
             }
-            else
+            else if (item is SplitViewGroup)
             {
                 return GroupTemplate;
             }
+            else
+                return base.SelectTemplateCore(item, container);
         }
     }
 }

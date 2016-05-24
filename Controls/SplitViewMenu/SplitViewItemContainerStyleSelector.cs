@@ -20,14 +20,16 @@ namespace OpenUWP.Controls.SplitViewMenu
             {
                 return ActionMenuItemstyle;
             }
-            else if(item is SplitViewSeparator)
+            else if (item is SplitViewSeparator)
             {
                 return SeparatorStyle;
             }
-            else
+            else if (item is SplitViewGroup)
             {
                 return GroupStyle;
             }
+            else
+                return base.SelectStyleCore(item, container);
         }
     }
 }
