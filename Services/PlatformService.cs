@@ -73,6 +73,18 @@ namespace OpenUWP.Services
             return WebUtility.UrlDecode(url);
         }
 
+        public static string Base64Encode(string input)
+        {
+            var plainTextBytes = Encoding.UTF8.GetBytes(input);
+            return Convert.ToBase64String(plainTextBytes);
+        }
+
+        public static string Base64Decode(string input)
+        {
+            var base64EncodedBytes = Convert.FromBase64String(input);
+            return Encoding.UTF8.GetString(base64EncodedBytes, 0, base64EncodedBytes.Length);
+        }
+
         public async static Task<Geoposition> GetCurrentLocation()
         {
             Geoposition pos = null;
