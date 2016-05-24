@@ -492,18 +492,21 @@ namespace OpenUWP.OpenUWP_XamlTypeInfo
             case "OpenUWP.Controls.IconButton.DecodePixelWidth":
                 userType = (global::OpenUWP.OpenUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("OpenUWP.Controls.IconButton");
                 xamlMember = new global::OpenUWP.OpenUWP_XamlTypeInfo.XamlMember(this, "DecodePixelWidth", "Int32");
+                xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_2_IconButton_DecodePixelWidth;
                 xamlMember.Setter = set_2_IconButton_DecodePixelWidth;
                 break;
             case "OpenUWP.Controls.IconButton.RestImageSource":
                 userType = (global::OpenUWP.OpenUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("OpenUWP.Controls.IconButton");
                 xamlMember = new global::OpenUWP.OpenUWP_XamlTypeInfo.XamlMember(this, "RestImageSource", "Windows.UI.Xaml.Media.ImageSource");
+                xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_3_IconButton_RestImageSource;
                 xamlMember.Setter = set_3_IconButton_RestImageSource;
                 break;
             case "OpenUWP.Controls.IconButton.PressedImageSource":
                 userType = (global::OpenUWP.OpenUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("OpenUWP.Controls.IconButton");
                 xamlMember = new global::OpenUWP.OpenUWP_XamlTypeInfo.XamlMember(this, "PressedImageSource", "Windows.UI.Xaml.Media.ImageSource");
+                xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_4_IconButton_PressedImageSource;
                 xamlMember.Setter = set_4_IconButton_PressedImageSource;
                 break;
@@ -516,12 +519,14 @@ namespace OpenUWP.OpenUWP_XamlTypeInfo
             case "OpenUWP.Controls.IconButton.TitleFontSize":
                 userType = (global::OpenUWP.OpenUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("OpenUWP.Controls.IconButton");
                 xamlMember = new global::OpenUWP.OpenUWP_XamlTypeInfo.XamlMember(this, "TitleFontSize", "Int32");
+                xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_6_IconButton_TitleFontSize;
                 xamlMember.Setter = set_6_IconButton_TitleFontSize;
                 break;
             case "OpenUWP.Controls.IconButton.ContentStrect":
                 userType = (global::OpenUWP.OpenUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("OpenUWP.Controls.IconButton");
                 xamlMember = new global::OpenUWP.OpenUWP_XamlTypeInfo.XamlMember(this, "ContentStrect", "Windows.UI.Xaml.Media.Stretch");
+                xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_7_IconButton_ContentStrect;
                 xamlMember.Setter = set_7_IconButton_ContentStrect;
                 break;
@@ -540,24 +545,28 @@ namespace OpenUWP.OpenUWP_XamlTypeInfo
             case "OpenUWP.Controls.IconButton.BackgroundInRestState":
                 userType = (global::OpenUWP.OpenUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("OpenUWP.Controls.IconButton");
                 xamlMember = new global::OpenUWP.OpenUWP_XamlTypeInfo.XamlMember(this, "BackgroundInRestState", "Windows.UI.Xaml.Media.SolidColorBrush");
+                xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_10_IconButton_BackgroundInRestState;
                 xamlMember.Setter = set_10_IconButton_BackgroundInRestState;
                 break;
             case "OpenUWP.Controls.IconButton.BackgroundInPressedState":
                 userType = (global::OpenUWP.OpenUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("OpenUWP.Controls.IconButton");
                 xamlMember = new global::OpenUWP.OpenUWP_XamlTypeInfo.XamlMember(this, "BackgroundInPressedState", "Windows.UI.Xaml.Media.SolidColorBrush");
+                xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_11_IconButton_BackgroundInPressedState;
                 xamlMember.Setter = set_11_IconButton_BackgroundInPressedState;
                 break;
             case "OpenUWP.Controls.IconButton.IsChecked":
                 userType = (global::OpenUWP.OpenUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("OpenUWP.Controls.IconButton");
                 xamlMember = new global::OpenUWP.OpenUWP_XamlTypeInfo.XamlMember(this, "IsChecked", "Boolean");
+                xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_12_IconButton_IsChecked;
                 xamlMember.Setter = set_12_IconButton_IsChecked;
                 break;
             case "OpenUWP.Controls.IconButton.ImageMargin":
                 userType = (global::OpenUWP.OpenUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("OpenUWP.Controls.IconButton");
                 xamlMember = new global::OpenUWP.OpenUWP_XamlTypeInfo.XamlMember(this, "ImageMargin", "Windows.UI.Xaml.Thickness");
+                xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_13_IconButton_ImageMargin;
                 xamlMember.Setter = set_13_IconButton_ImageMargin;
                 break;
@@ -571,6 +580,7 @@ namespace OpenUWP.OpenUWP_XamlTypeInfo
             case "OpenUWP.Controls.IconButton.Type":
                 userType = (global::OpenUWP.OpenUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("OpenUWP.Controls.IconButton");
                 xamlMember = new global::OpenUWP.OpenUWP_XamlTypeInfo.XamlMember(this, "Type", "OpenUWP.Controls.ButtonType");
+                xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_15_IconButton_Type;
                 xamlMember.Setter = set_15_IconButton_Type;
                 break;

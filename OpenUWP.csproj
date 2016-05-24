@@ -173,7 +173,6 @@
     <Compile Include="Services\NetworkService.cs" />
     <Compile Include="Services\StorageService.cs" />
     <Compile Include="Utils\ActionHelper.cs" />
-    <Compile Include="Utils\AudioHelper.cs" />
     <Compile Include="Utils\Base32.cs" />
     <Compile Include="Utils\BaseRC4.cs" />
     <Compile Include="Utils\DateTimeHelper.cs" />
