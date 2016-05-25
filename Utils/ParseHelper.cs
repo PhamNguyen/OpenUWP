@@ -11,35 +11,12 @@ using System.Text.RegularExpressions;
 
 namespace OpenUWP.Utils
 {
-    public enum GameMediaLinkType
-    {
-        Cover,
-        Screenshot,
-        Icon,
-        Thumbnail
-    }
-    public enum FeedServerImageSize
-    {
-        t1 = 0, //138, 138
-        t2 = 1, //210, 210
-        t3 = 2 //290, 290
-    }
-
-    public enum CoverServerImageResolution
-    {
-        ldpi, //97,67
-        mdpi, //130,90
-        hdpi, //195,135
-        xhdpi, //260,180
-        xxdpi //390,270
-    }
-
     public class ParseHelper
     {
         public const int MaxCountOfDescription = 20;
 
-
         public static string GoogleApiKey = String.Empty;
+
         public static T TryGetValue<T>(dynamic data)
         {
             T result = default(T);
@@ -73,7 +50,6 @@ namespace OpenUWP.Utils
 
                         case "System.Boolean":
                             {
-
                                 result = Convert.ToBoolean(typeDat);
                             }
                             break;
