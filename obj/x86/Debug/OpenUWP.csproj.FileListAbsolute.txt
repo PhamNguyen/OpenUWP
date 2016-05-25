@@ -5,7 +5,6 @@ G:\OpenUWP\bin\x86\Debug\OpenUWP.xr.xml
 G:\OpenUWP\bin\x86\Debug\OpenUWP.dll
 G:\OpenUWP\bin\x86\Debug\OpenUWP.pdb
 G:\OpenUWP\bin\x86\Debug\OpenUWP.pri
-G:\OpenUWP\obj\x86\Debug\OpenUWP.csprojResolveAssemblyReference.cache
 G:\OpenUWP\obj\x86\Debug\Controls\GifView.g.i.cs
 G:\OpenUWP\obj\x86\Debug\Controls\GifView.g.cs
 G:\OpenUWP\obj\x86\Debug\Controls\IconButton.g.i.cs
@@ -31,3 +30,4 @@ G:\OpenUWP\obj\x86\Debug\pri.resfiles.intermediate
 G:\OpenUWP\obj\x86\Debug\qualifiers.txt
 G:\OpenUWP\obj\x86\Debug\qualifiers.txt.intermediate
 G:\OpenUWP\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+G:\OpenUWP\obj\x86\Debug\OpenUWP.csprojResolveAssemblyReference.cache

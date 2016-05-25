@@ -139,6 +139,7 @@
     <Compile Include="Controls\SuperImage.cs" />
     <Compile Include="Converter\BoolToVisibility.cs" />
     <Compile Include="Converter\EncodedHtmlToStringConverter.cs" />
+    <Compile Include="Converter\LongToBoolJsonConverter.cs" />
     <Compile Include="Converter\StringToBoolJsonConverter.cs" />
     <Compile Include="Converter\StringToDoubleJsonConverter.cs" />
     <Compile Include="Converter\StringToIntJsonConverter.cs" />
