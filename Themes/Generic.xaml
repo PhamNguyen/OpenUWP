@@ -387,7 +387,7 @@
         </Setter>
     </Style>
     <!--EndRegion SplitViewMenu-->
-    <!--endregion CornerButton-->
+    <!--Region CornerButton-->
     <Style TargetType="local:CornerButton">
         <Setter Property="Background"
                 Value="{ThemeResource SystemControlBackgroundBaseLowBrush}" />
@@ -499,5 +499,5 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <!--endregion CornerButton-->
+    <!--Endregion CornerButton-->
 </ResourceDictionary>
