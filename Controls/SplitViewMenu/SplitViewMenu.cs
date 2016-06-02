@@ -362,7 +362,7 @@ namespace OpenUWP.Controls.SplitViewMenu
             var resources = ResourceLoader.GetForCurrentView("OpenUWP/Resources");
             var dialog = new MessageDialog(resources.GetString("ConfirmLeavePage"));
             dialog.Commands.Add(new UICommand(resources.GetString("Leave")) { Id = 1 });
-            dialog.Commands.Add(new UICommand(resources.GetString("Cancel")) { Id = 0 });
+            dialog.Commands.Add(new UICommand(resources.GetString("StayOn")) { Id = 0 });
             dialog.DefaultCommandIndex = 1;
             dialog.CancelCommandIndex = 0;
             var resultDialog = await dialog.ShowAsync();
