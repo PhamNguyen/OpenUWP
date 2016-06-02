@@ -11,5 +11,6 @@ namespace OpenUWP.Controls.SplitViewMenu
         public char SymbolAsChar => (char)Symbol;
         public object Arguments { get; set; }
         public Type DestinationPage { get; set; }
+        public bool IsWarningLeavePage { get; set; }
     }
 }

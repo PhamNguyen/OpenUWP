@@ -1,8 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Windows.ApplicationModel.Resources;
 using Windows.UI;
 using Windows.UI.Core;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Automation;
 using Windows.UI.Xaml.Controls;
@@ -104,7 +109,7 @@ namespace OpenUWP.Controls.SplitViewMenu
 
         #region MenuItemContainerStyleProperty
 
-        internal static readonly DependencyProperty MenuItemContainerStyleProperty = 
+        internal static readonly DependencyProperty MenuItemContainerStyleProperty =
             DependencyProperty.Register("MenuItemContainerStyle", typeof(Style), typeof(SplitViewMenu),
                 new PropertyMetadata(null));
 
@@ -330,7 +335,7 @@ namespace OpenUWP.Controls.SplitViewMenu
                 container.IsTabStop = true;
         }
 
-        private void OnNavMenuItemInvoked(object sender, ListViewItem e)
+        private async void OnNavMenuItemInvoked(object sender, ListViewItem e)
         {
             var item = ((MenuListView)sender).ItemFromContainer(e);
             if (item is INavigationMenuItem)
@@ -340,7 +345,9 @@ namespace OpenUWP.Controls.SplitViewMenu
                 if (navigationItem?.DestinationPage != null &&
                     navigationItem.DestinationPage != _pageFrame.CurrentSourcePageType)
                 {
-                    _pageFrame.Navigate(navigationItem.DestinationPage, navigationItem.Arguments);
+                    if (!navigationItem.IsWarningLeavePage
+                        || (navigationItem.IsWarningLeavePage && await ConfirmLeavePage()))
+                        _pageFrame.Navigate(navigationItem.DestinationPage, navigationItem.Arguments);
                 }
             }
             else
@@ -348,6 +355,19 @@ namespace OpenUWP.Controls.SplitViewMenu
                 var actionItem = item as IActionMenuItem;
                 actionItem?.InvokeClick();
             }
+        }
+
+        private async Task<bool> ConfirmLeavePage()
+        {
+            var resources = ResourceLoader.GetForCurrentView("OpenUWP/Resources");
+            var dialog = new MessageDialog(resources.GetString("ConfirmLeavePage"));
+            dialog.Commands.Add(new UICommand(resources.GetString("Leave")) { Id = 1 });
+            dialog.Commands.Add(new UICommand(resources.GetString("Cancel")) { Id = 0 });
+            dialog.DefaultCommandIndex = 1;
+            dialog.CancelCommandIndex = 0;
+            var resultDialog = await dialog.ShowAsync();
+
+            return (int)resultDialog.Id == 1 ? true : false;
         }
     }
 }
