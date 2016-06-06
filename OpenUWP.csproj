@@ -105,6 +105,8 @@
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <None Include="project.json" />
+    <PRIResource Include="Resource\vi-VN\Resources.resw" />
+    <PRIResource Include="Resource\en-US\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BaseListViewItem.cs" />
@@ -115,6 +117,7 @@
     <Compile Include="Base\ObservableList.cs" />
     <Compile Include="Base\ObservableModel.cs" />
     <Compile Include="Base\PairItem.cs" />
+    <Compile Include="Controls\CornerButton.cs" />
     <Compile Include="Controls\GifView.xaml.cs">
       <DependentUpon>GifView.xaml</DependentUpon>
     </Compile>
@@ -128,7 +131,6 @@
     <Compile Include="Controls\SplitViewMenu\ISplitViewItem.cs" />
     <Compile Include="Controls\SplitViewMenu\ISplitViewMenuItem.cs" />
     <Compile Include="Controls\SplitViewMenu\MenuListView.cs" />
-    <Compile Include="Controls\SplitViewMenu\NavMenuListView.cs" />
     <Compile Include="Controls\SplitViewMenu\SimpleActionMenuItem.cs" />
     <Compile Include="Controls\SplitViewMenu\SimpleNavMenuItem.cs" />
     <Compile Include="Controls\SplitViewMenu\SplitViewGroup.cs" />
@@ -163,8 +165,10 @@
     <Compile Include="CustomTriggers\UserHandPreferenceStateTrigger.cs" />
     <Compile Include="CustomTriggers\UserInteractionModeTrigger.cs" />
     <Compile Include="CustomTriggers\WeakEventListener.cs" />
+    <Compile Include="Extentions\CollectionExtentions.cs" />
     <Compile Include="Extentions\ListViewBaseExtentions.cs" />
     <Compile Include="Extentions\PageExtentions.cs" />
+    <Compile Include="Extentions\RandomExtentions.cs" />
     <Compile Include="Extentions\StoryboardExtentions.cs" />
     <Compile Include="Extentions\StringExtentions.cs" />
     <Compile Include="Models\ClientInfo.cs" />

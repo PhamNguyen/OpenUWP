@@ -15,8 +15,8 @@ namespace OpenUWP.Services
 {
     public class StorageService
     {
-        private static ApplicationDataContainer settings = Windows.Storage.ApplicationData.Current.LocalSettings;
-        private static StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+        private static ApplicationDataContainer settings = ApplicationData.Current.LocalSettings;
+        private static StorageFolder localFolder = ApplicationData.Current.LocalFolder;
         /// <summary>
         /// Save an object to phone settings by key and value
         /// </summary>
@@ -93,7 +93,7 @@ namespace OpenUWP.Services
                 stream.Dispose();
             }
             return objectFromXml;
-        }        
+        }
 
         /// <summary>
         /// Save an object to Local Folder. 
@@ -119,6 +119,11 @@ namespace OpenUWP.Services
                     serializer.Serialize(xmlWriter, data);
                 }
             }
+        }
+
+        public static Task LoadObjectFromXmlFileAsync<T>(object savedLatestPrizedFileName)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -257,6 +262,63 @@ namespace OpenUWP.Services
             }
 
             return true;
+        }
+
+        public static async Task SaveString(string filePath, string stringToWrite)
+        {
+            try
+            {
+                StorageFolder currentFolder = localFolder;
+
+                if (!string.IsNullOrEmpty(filePath) && !string.IsNullOrEmpty(stringToWrite))
+                {
+                    IStorageItem item = await currentFolder.TryGetItemAsync(filePath);
+
+                    if (item != null)
+                    {
+                        StorageFile file = item as StorageFile;
+                        if (file != null)
+                        {
+                            await file.DeleteAsync(StorageDeleteOption.PermanentDelete);
+                        }
+                    }
+
+                    var createdFile = await currentFolder.CreateFileAsync(filePath);
+                    await FileIO.WriteTextAsync(createdFile, stringToWrite);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(string.Format("Write String To File \"{0}\" exception: {1}", filePath, ex.Message));
+            }
+        }
+
+        public static async Task<string> LoadString(string filePath)
+        {
+            try
+            {
+                StorageFolder currentFolder = localFolder;
+
+                if (!string.IsNullOrEmpty(filePath))
+                {
+                    IStorageItem item = await currentFolder.TryGetItemAsync(filePath);
+
+                    if (item != null)
+                    {
+                        StorageFile file = item as StorageFile;
+                        if (file != null)
+                        {
+                            return await FileIO.ReadTextAsync(file);
+                        }
+                    }
+                }
+                return String.Empty;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(string.Format("Load String From File \"{0}\" exception: {1}", filePath, ex.Message));
+                return String.Empty;
+            }
         }
 
         public static async Task<StorageFile> PickSinglePhoto()

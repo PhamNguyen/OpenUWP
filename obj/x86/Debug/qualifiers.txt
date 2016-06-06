@@ -1,0 +1,2 @@
+Language=EN-US
+Language=VI-VN

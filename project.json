@@ -3,7 +3,7 @@
     "HtmlAgilityPack": "1.4.9",
     "Microsoft.Net.Http": "2.2.29",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
-    "Newtonsoft.Json": "7.0.1",
+    "Newtonsoft.Json": "8.0.3",
     "Win2D.uwp": "1.14.0"
   },
   "frameworks": {

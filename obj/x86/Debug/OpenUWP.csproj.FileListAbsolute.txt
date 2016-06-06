@@ -30,3 +30,4 @@ G:\OpenUWP\obj\x86\Debug\pri.resfiles.intermediate
 G:\OpenUWP\obj\x86\Debug\qualifiers.txt
 G:\OpenUWP\obj\x86\Debug\qualifiers.txt.intermediate
 G:\OpenUWP\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+G:\OpenUWP\obj\x86\Debug\OpenUWP.csprojResolveAssemblyReference.cache
