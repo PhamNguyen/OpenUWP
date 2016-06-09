@@ -345,9 +345,7 @@ namespace OpenUWP.Controls.SplitViewMenu
                 if (navigationItem?.DestinationPage != null &&
                     navigationItem.DestinationPage != _pageFrame.CurrentSourcePageType)
                 {
-                    if (!navigationItem.IsWarningLeavePage
-                        || (navigationItem.IsWarningLeavePage && await ConfirmLeavePage()))
-                        _pageFrame.Navigate(navigationItem.DestinationPage, navigationItem.Arguments);
+                    _pageFrame.Navigate(navigationItem.DestinationPage, navigationItem.Arguments);
                 }
             }
             else
@@ -355,19 +353,6 @@ namespace OpenUWP.Controls.SplitViewMenu
                 var actionItem = item as IActionMenuItem;
                 actionItem?.InvokeClick();
             }
-        }
-
-        private async Task<bool> ConfirmLeavePage()
-        {
-            var resources = ResourceLoader.GetForCurrentView("OpenUWP/Resources");
-            var dialog = new MessageDialog(resources.GetString("ConfirmLeavePage"));
-            dialog.Commands.Add(new UICommand(resources.GetString("Leave")) { Id = 1 });
-            dialog.Commands.Add(new UICommand(resources.GetString("StayOn")) { Id = 0 });
-            dialog.DefaultCommandIndex = 1;
-            dialog.CancelCommandIndex = 0;
-            var resultDialog = await dialog.ShowAsync();
-
-            return (int)resultDialog.Id == 1 ? true : false;
         }
     }
 }
