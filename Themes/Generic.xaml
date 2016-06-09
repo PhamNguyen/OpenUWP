@@ -33,6 +33,7 @@
                                 MaxWidth="{TemplateBinding MaxWidth}"
                                 MinHeight="{TemplateBinding MinHeight}"
                                 MinWidth="{TemplateBinding MinWidth}"
+                                Visibility="Collapsed"
                                 VerticalAlignment="{TemplateBinding VerticalAlignment}"
                                 HorizontalAlignment="{TemplateBinding HorizontalAlignment}">
                             <Border.Background>
