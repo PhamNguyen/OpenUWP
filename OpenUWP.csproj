@@ -117,6 +117,7 @@
     <Compile Include="Base\ObservableList.cs" />
     <Compile Include="Base\ObservableModel.cs" />
     <Compile Include="Base\PairItem.cs" />
+    <Compile Include="Base\BindableBase.cs" />
     <Compile Include="Controls\CornerButton.cs" />
     <Compile Include="Controls\GifView.xaml.cs">
       <DependentUpon>GifView.xaml</DependentUpon>
