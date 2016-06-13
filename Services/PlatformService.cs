@@ -16,6 +16,7 @@ using Windows.Security.Cryptography.Core;
 using Windows.Security.ExchangeActiveSyncProvisioning;
 using Windows.Storage.Streams;
 using Windows.System.Profile;
+using Windows.Networking.PushNotifications;
 
 namespace OpenUWP.Services
 {
@@ -196,6 +197,11 @@ namespace OpenUWP.Services
         public static async void ShowMessageBox(string content, string title)
         {
             await new Windows.UI.Popups.MessageDialog(content, title).ShowAsync();
+        }
+
+        public static async Task<PushNotificationChannel> GetPushNotificationChannel()
+        {
+            return await PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync();
         }
     }
 }
