@@ -6,7 +6,7 @@ using Windows.UI.Xaml.Data;
 
 namespace OpenUWP.Converter
 {
-    public class BoolToVisibility : IValueConverter
+    public class BoolToVisibilityConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
