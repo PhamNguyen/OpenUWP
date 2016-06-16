@@ -140,7 +140,7 @@
     <Compile Include="Controls\SplitViewMenu\SplitViewMenu.cs" />
     <Compile Include="Controls\SplitViewMenu\SplitViewSeparator.cs" />
     <Compile Include="Controls\SuperImage.cs" />
-    <Compile Include="Converter\BoolToVisibility.cs" />
+    <Compile Include="Converter\BoolToVisibilityConverter.cs" />
     <Compile Include="Converter\EncodedHtmlToStringConverter.cs" />
     <Compile Include="Converter\LongToBoolJsonConverter.cs" />
     <Compile Include="Converter\StringToBoolJsonConverter.cs" />
