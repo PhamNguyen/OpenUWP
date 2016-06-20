@@ -37,6 +37,7 @@ D:\OneDrive\Projects\OpenUWP\bin\x86\Debug\OpenUWP.xr.xml
 D:\OneDrive\Projects\OpenUWP\bin\x86\Debug\OpenUWP.dll
 D:\OneDrive\Projects\OpenUWP\bin\x86\Debug\OpenUWP.pdb
 D:\OneDrive\Projects\OpenUWP\bin\x86\Debug\OpenUWP.pri
+D:\OneDrive\Projects\OpenUWP\obj\x86\Debug\OpenUWP.csprojResolveAssemblyReference.cache
 D:\OneDrive\Projects\OpenUWP\obj\x86\Debug\Controls\GifView.g.i.cs
 D:\OneDrive\Projects\OpenUWP\obj\x86\Debug\Controls\GifView.g.cs
 D:\OneDrive\Projects\OpenUWP\obj\x86\Debug\Controls\IconButton.g.i.cs

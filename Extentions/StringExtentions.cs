@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Windows.Security.Cryptography;
 using Windows.Storage.Streams;
@@ -179,7 +180,8 @@ namespace OpenUWP.Extentions
             return input.Substring(0, input.IndexOf(" ", length));
         }
 
-        public static string ToBase64String(this string input) {
+        public static string ToBase64String(this string input)
+        {
 
             // Decoded the string from Base64 to binary.
             IBuffer buffer = CryptographicBuffer.ConvertStringToBinary(input, BinaryStringEncoding.Utf8);
@@ -190,7 +192,8 @@ namespace OpenUWP.Extentions
             return base64Data;
         }
 
-        public static string FromBase64String(this string input) {
+        public static string FromBase64String(this string input)
+        {
             // Decoded the string from Base64 to binary.
             IBuffer buffer = CryptographicBuffer.DecodeFromBase64String(input);
 
@@ -216,5 +219,66 @@ namespace OpenUWP.Extentions
 
             return string.Empty;
         }
+
+        #region Vùng kiểm tra xem có phải là email or phone number ko?
+
+        private static string patternEmail = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
+        private static string patternPhone = @"\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})";
+        private static string patternOnlyNumber = @"^[0-9]+$";
+
+        /// <summary>
+        /// Kiểm tra xem chuổi string này có phải là một địa chỉ email hay không?
+        /// </summary>
+        /// <param name="input">Chuỗi string cần kiểm tra</param>
+        /// <returns>Trả về true nếu nó là địa chỉ email đúng cú pháp. Ngược lại, trả về false.</returns>
+        public static bool IsEmail(this string input)
+        {
+            var result = false;
+
+            if (!string.IsNullOrEmpty(input))
+            {
+                if (new Regex(patternEmail).IsMatch(input))
+                    result = true;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Kiểm tra xem chuổi string này có phải là một số điện thoại hay không?
+        /// </summary>
+        /// <param name="input">Chuỗi string cần kiểm tra</param>
+        /// <returns>Trả về true nếu nó là số điện thoại đúng cú pháp. Ngược lại, trả về false.</returns>
+        public static bool IsPhoneNumber(this string input)
+        {
+            var result = false;
+
+            if (!string.IsNullOrEmpty(input))
+            {
+                if (new Regex(patternPhone).IsMatch(input))
+                    result = true;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Kiểm tra xem chuổi string này có phải là một dãy số hay không?
+        /// </summary>
+        /// <param name="input">Chuỗi string cần kiểm tra</param>
+        /// <returns>Trả về true nếu nó là một dãy số. Ngược lại, trả về false.</returns>
+        public static bool IsDigit(this string input)
+        {
+            var result = false;
+
+            if (!string.IsNullOrEmpty(input))
+            {
+                if (new Regex(patternOnlyNumber).IsMatch(input))
+                    result = true;
+            }
+
+            return result;
+        }
+        #endregion
     }
 }
